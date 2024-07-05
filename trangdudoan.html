@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Dự Đoán</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .symbol {
+        font-size: 2em;
+        margin: 10px;
+      }
+      .equal-btns {
+        width: 100px;
+      }
+      .main-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 5px solid #007bff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffd5d5;
+      }
+      .centered-title {
+        text-align: center;
+      }
+      .phone-frame {
+        width: 350px;
+        height: 500px;
+        border: 5px black solid;
+        border-radius: 36px;
+        position: relative;
+        margin: 20px auto;
+        overflow: hidden;
+        background: #f2f2f2;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .screen {
+        width: 100%;
+        height: 100%;
+        background: white;
+        overflow-y: auto;
+      }
+      .history-container {
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-top: 20px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #ff6f61, #de1b1b);
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .symbol {
+        display: inline-block;
+        width: 100px; /* Độ rộng cố định */
+        height: 50px; /* Chiều cao cố định */
+        line-height: 50px; /* Căn giữa theo chiều dọc */
+        text-align: center; /* Căn giữa theo chiều ngang */
+        font-size: 1.5em; /* Kích thước chữ */
+        font-weight: bold; /* Đậm chữ */
+        color: white; /* Màu chữ */
+        background-color: #007bff; /* Màu nền */
+        border: 2px solid #0056b3; /* Khung */
+        border-radius: 10px; /* Bo tròn góc */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+        margin: 10px; /* Khoảng cách giữa các phần tử */
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .equal-btns {
+        flex: 1;
+        margin: 0 5px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        text-align: center;
+      }
+
+      .equal-btns:hover {
+        background-color: #0056b3;
+      }
+
+      /* Thêm media query để điều chỉnh kích thước trên desktop */
+      @media (min-width: 768px) {
+        .main-container {
+          max-width: 800px;
+          padding: 40px;
+        }
+
+        .symbol {
+          width: 150px;
+          height: 75px;
+          line-height: 75px;
+          font-size: 2em;
+        }
+
+        .equal-btns {
+          padding: 15px 30px;
+          font-size: 1.2em;
+        }
+
+        h1 {
+          font-size: 3em;
+        }
+
+        .phone-frame {
+          width: 400px;
+          height: 800px;
+        }
+      }
+
+      /* CSS cho phần Kết quả */
+      .result.win {
+        background-color: #28a745; /* Màu xanh cho Thắng */
+        color: white;
+      }
+
+      .result.lose {
+        background-color: #dc3545; /* Màu đỏ cho Thua */
+        color: white;
+      }
+
+      /* Thêm CSS cho các nút có kích thước bằng nhau */
+      .equal-btns {
+        flex: 1;
+        margin: 0 5px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        width: 100px; /* Đảm bảo kích thước bằng nhau */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="text-center">HACK VN168</h1>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-auto d-flex justify-content-around">
+          <div id="symbol1" class="symbol">Lớn</div>
+          <div id="symbol2" class="symbol">Nhỏ</div>
+          <div id="symbol3" class="symbol">Lớn</div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-auto text-center">
+          <label for="spinDuration">Nhập 4 số cuối mã phiên hiện tại:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick="decrement()"
+              >
+                -
+              </button>
+            </div>
+            <input
+              type="number"
+              id="spinDuration"
+              class="form-control"
+              value="0"
+              min="0"
+              max="9999"
+              oninput="checkSpinButton()"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                onclick="increment()"
+              >
+                +
+              </button>
+              <button
+                id="spinButton"
+                class="btn btn-primary"
+                onclick="spin()"
+                disabled
+              >
+                Hack
+              </button>
+            </div>
+          </div>
+          <div class="mt-3">
+            <span>Số credit hiện tại: </span
+            ><span id="creditCount">1999999</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-auto">
+          <button
+            id="winButton"
+            class="btn btn-success equal-btns"
+            onclick="recordResult(true)"
+            disabled
+          >
+            Thắng
+          </button>
+          <button
+            id="loseButton"
+            class="btn btn-danger equal-btns"
+            onclick="recordResult(false)"
+            disabled
+          >
+            Thua
+          </button>
+        </div>
+      </div>
+
+      <div class="phone-frame">
+        <div class="screen">
+          <iframe
+            src="https://vn168a.com/#/register?invitationCode=5551230143"
+            width="100%"
+            height="100%"
+            style="border: none"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4 button-container">
+        <button class="equal-btns" onclick="goHome()">Quay về trang chủ</button>
+        <button class="equal-btns" onclick="reloadPage()">Tải lại trang</button>
+        <button class="equal-btns" onclick="buyCredit()">Lộc cho admin</button>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col">
+          <h2 class="centered-title">Bảng Lịch Sử</h2>
+          <div class="history-container">
+            <ul id="historyList" class="list-group"></ul>
+            <div id="historyTable"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-auto">
+          <button class="btn btn-warning" onclick="clearHistory()">
+            Xóa Tất Cả Lịch Sử
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "7afb628d-2e10-46a7-a324-66b75080a154";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+
+      const symbols = ["Lớn", "Nhỏ", "Lớn", "Nhỏ", "Lớn", "Nhỏ"];
+      let spinning = false;
+      let history = [];
+      let tble = [];
+      let credit = 1999999; // Số credit ban đầu
+
+      document.querySelectorAll(".col-auto").forEach((element) => {
+        element.addEventListener("click", checkSpinButton);
+      });
+
+      function checkSpinButton() {
+        const spinDuration = document.getElementById("spinDuration").value;
+        const spinButton = document.getElementById("spinButton");
+        spinButton.disabled =
+          spinDuration === "" || parseInt(spinDuration) === 0;
+      }
+
+      function increment() {
+        const spinDuration = document.getElementById("spinDuration");
+        if (parseInt(spinDuration.value) < 9999) {
+          spinDuration.value = parseInt(spinDuration.value) + 1;
+          checkSpinButton();
+        }
+      }
+
+      function decrement() {
+        const spinDuration = document.getElementById("spinDuration");
+        if (parseInt(spinDuration.value) > 0) {
+          spinDuration.value = parseInt(spinDuration.value) - 1;
+          checkSpinButton();
+        }
+      }
+
+      function spin() {
+        const spinDuration = document.getElementById("spinDuration").value;
+        if (spinDuration === "" || parseInt(spinDuration) === 0) {
+          alert("Vui lòng nhập mã phiên trước khi quay!");
+          return;
+        }
+
+        if (spinning) return;
+
+        if (credit <= 0) {
+          alert(
+            "Bạn không đủ credit để thực hiện hành động này, vui lòng liên hệ admin để mua thêm credit!"
+          );
+          return;
+        }
+
+        spinning = true;
+        disableActionButtons();
+        disableSpinButton();
+
+        // Trừ 1 credit
+        credit--;
+        document.getElementById("creditCount").innerText = credit;
+
+        const slots = document.querySelectorAll(".symbol");
+        let counter = 0;
+
+        const spinInterval = setInterval(() => {
+          slots.forEach((slot) => {
+            const randomIndex = Math.floor(Math.random() * symbols.length);
+            slot.innerText = symbols[randomIndex];
+          });
+          counter++;
+          if (counter === 10) {
+            const periodInput = document.getElementById("spinDuration");
+            const currentPeriod = parseInt(periodInput.value);
+            const incrementedPeriod =
+              currentPeriod + 1 <= 9999 ? currentPeriod + 1 : 9999;
+
+            periodInput.value = incrementedPeriod;
+            clearInterval(spinInterval);
+            spinning = false;
+            document.getElementById("symbol1").innerText = "";
+            document.getElementById("symbol3").innerText = "";
+            checkResults(incrementedPeriod);
+          }
+        }, 200);
+      }
+
+      function checkResults(incrementedPeriod) {
+        const symbols = Array.from(document.querySelectorAll(".symbol")).map(
+          (slot) => slot.innerText
+        );
+        const uniqueSymbols = new Set(symbols);
+
+        const result =
+          "Phiên: " +
+          incrementedPeriod +
+          "\nĐặt cược vào: " +
+          document.getElementById("symbol2").innerText;
+        history.unshift(result); // Thêm vào đầu danh sách
+        updateHistory();
+        alert(result);
+        enableActionButtons();
+      }
+
+      function recordResult(win) {
+        const period = document.getElementById("spinDuration").value;
+        const result = win ? "Thắng" : "Thua";
+        const predres = document.getElementById("symbol2").innerText;
+
+        tble.unshift({ period, predres, result }); // Thêm vào đầu danh sách
+        updateHistoryTable();
+        enableSpinButton();
+      }
+
+      function updateHistoryTable() {
+        const tableDiv = document.getElementById("historyTable");
+        tableDiv.innerHTML = "";
+
+        const table = document.createElement("table");
+        table.classList.add("table", "table-bordered");
+
+        const headers = ["Phiên", "Kết quả dự đoán", "Kết quả", "Xóa"];
+
+        const headerRow = document.createElement("tr");
+        headers.forEach((headerText) => {
+          const th = document.createElement("th");
+          th.textContent = headerText;
+          headerRow.appendChild(th);
+        });
+
+        table.appendChild(headerRow);
+
+        tble.forEach((entry, index) => {
+          const row = document.createElement("tr");
+
+          for (const key in entry) {
+            const cell = document.createElement("td");
+            cell.textContent = entry[key];
+            row.appendChild(cell);
+          }
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Xóa";
+          deleteButton.classList.add("btn", "btn-danger", "btn-sm");
+          deleteButton.onclick = () => {
+            tble.splice(index, 1);
+            updateHistoryTable();
+          };
+          const cell = document.createElement("td");
+          cell.appendChild(deleteButton);
+          row.appendChild(cell);
+
+          table.appendChild(row);
+        });
+
+        tableDiv.appendChild(table);
+      }
+
+      function disableActionButtons() {
+        document.getElementById("winButton").disabled = true;
+        document.getElementById("loseButton").disabled = true;
+      }
+
+      function enableActionButtons() {
+        document.getElementById("winButton").disabled = false;
+        document.getElementById("loseButton").disabled = false;
+      }
+
+      function enableSpinButton() {
+        document.getElementById("spinButton").disabled = false;
+      }
+
+      function disableSpinButton() {
+        document.getElementById("spinButton").disabled = true;
+      }
+
+      function clearHistory() {
+        history = [];
+        tble = [];
+        updateHistory();
+        updateHistoryTable();
+      }
+
+      function updateHistory() {
+        const historyList = document.getElementById("historyList");
+        historyList.innerHTML = "";
+        history.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.classList.add(
+            "list-group-item",
+            "d-flex",
+            "justify-content-between",
+            "align-items-center"
+          );
+          li.textContent = item;
+
+          const deleteButton = document.createElement("button");
+          deleteButton.textContent = "Xóa";
+          deleteButton.classList.add("btn", "btn-danger", "btn-sm");
+          deleteButton.onclick = () => {
+            history.splice(index, 1);
+            updateHistory();
+          };
+
+          li.appendChild(deleteButton);
+          historyList.insertBefore(li, historyList.firstChild); // Thêm vào đầu danh sách
+        });
+      }
+
+      function goHome() {
+        window.location.href = "index.html"; // Đường dẫn về trang chủ
+      }
+
+      function reloadPage() {
+        window.location.reload(); // Tải lại trang
+      }
+
+      function buyCredit() {
+        window.location.href = "thanhtoan.html"; // Đường dẫn đến file HTML mua credit
+      }
+    </script>
+  </body>
+</html>

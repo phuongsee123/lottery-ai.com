@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang thanh toán</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-color: #f8f9fa; /* Màu nền */
+        color: #343a40; /* Màu chữ chính */
+        font-family: Arial, sans-serif; /* Font chữ chính */
+      }
+
+      #payment {
+        padding: 40px 0;
+      }
+
+      .card {
+        border: none; /* Xóa đường viền của thẻ card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+      }
+
+      .card-title {
+        color: #007bff; /* Màu chữ cho tiêu đề card */
+      }
+
+      .card-text {
+        color: #6c757d; /* Màu chữ cho nội dung card */
+      }
+
+      .btn-primary {
+        background-color: #007bff; /* Màu nền nút chính */
+        border-color: #007bff; /* Màu viền nút chính */
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3; /* Màu nền khi di chuột qua nút */
+        border-color: #0056b3; /* Màu viền khi di chuột qua nút */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="alertModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="alertModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="alertModalLabel">Thông báo</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Vui lòng thanh toán đúng số tiền trong gói mà bạn đã chọn, và chú
+              ý ghi nội dung bằng số điện thoại đăng ký tool chính xác để chúng
+              tôi có thể hoàn tất thanh toán và cộng số lượt cho bạn sử dụng.
+              Xin cảm ơn!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Đóng
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <section id="payment" class="mt-4">
+      <div class="container">
+        <h2 class="text-center mb-4">BẠN ĐANG THANH TOÁN...</h2>
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Chọn phương thức thanh toán</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Chuyển khoản ngân hàng:</strong></li>
+                  <li>- Ngân hàng: CAKE BANK</li>
+                  <li>- Chủ tài khoản: LUU VAN PHUONG</li>
+                  <li>- Số tài khoản: 0327253536</li>
+                  <li>- Nội dung: Số điện thoại của bạn</li>
+                </ul>
+                <hr />
+                <h5 class="card-title">Hoặc thanh toán qua Momo:</h5>
+                <p class="card-text">
+                  Quét mã QR hoặc chuyển tiền đến số điện thoại 0327253536 (LUU
+                  VAN PHUONG)
+                </p>
+                <img
+                  src="/images/QRMOMO.webp"
+                  class="img-fluid mb-3"
+                  alt="Momo QR Code"
+                />
+                <a
+                  href="/trangdudoan.html"
+                  class="btn btn-primary btn-lg btn-block"
+                  >QUAY VỀ TRANG CHỦ</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS và các thư viện JavaScript khác -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript để hiển thị popup -->
+    <script>
+      $(document).ready(function () {
+        $("#alertModal").modal("show");
+      });
+    </script>
+    <script type="text/javascript">
+      window.$crisp = [];
+      window.CRISP_WEBSITE_ID = "7afb628d-2e10-46a7-a324-66b75080a154";
+      (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      })();
+    </script>
+  </body>
+</html>

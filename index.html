@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        color: #343a40;
+        font-family: Arial, sans-serif;
+      }
+      .navbar-brand img {
+        height: 40px;
+      }
+      .banner {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+      }
+      .banner img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .main-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #007bff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #007bff;
+      }
+      .button-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .button-container a {
+        flex: 1 1 200px;
+        margin: 10px;
+        text-align: center;
+        padding: 15px 0;
+        border-radius: 5px;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      .button-container a:hover {
+        background-color: #0056b3;
+      }
+      .btn-guide {
+        background-color: #28a745;
+      }
+      .btn-login {
+        background-color: #17a2b8;
+      }
+      .btn-register {
+        background-color: #ffc107;
+      }
+      .btn-buy-credit {
+        background-color: #dc3545;
+      }
+      .demo-image {
+        width: 100%;
+        margin-top: 20px;
+      }
+      .demo-image img {
+        width: 100%;
+        height: auto;
+      }
+      .donors-list {
+        margin-top: 20px;
+        color: #ffffff; /* Thay đổi màu chữ thành màu trắng */
+        background-color: #007bff;
+        max-height: 200px; /* Chiều cao tối đa của hộp cuộn */
+        overflow-y: auto; /* Tạo hộp cuộn dọc */
+        position: relative;
+      }
+
+      .donors-list ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .donors-list li {
+        background-color: #007bff;
+        border: 1px solid #00ff1e;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 5px 0;
+      }
+      .review-section {
+        margin-top: 20px;
+      }
+      .review-form {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #007bff;
+        border-radius: 10px;
+        background-color: #ffffff;
+      }
+      .review-list {
+        margin-top: 20px;
+        max-height: 300px; /* Chiều cao tối đa của hộp cuộn đánh giá */
+        overflow-y: auto; /* Tạo hộp cuộn dọc cho đánh giá */
+      }
+      .review-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+      }
+      .review-item:last-child {
+        border-bottom: none;
+      }
+      .star-rating {
+        color: #ffc107;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .banner {
+          max-height: 200px;
+        }
+        h1 {
+          font-size: 2em;
+        }
+        .button-container a {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/images/logo.png" alt="Logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/trangdudoan.html">Đăng ký</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/trangdudoan.html">Đăng nhập</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="/images/banner1.webp" alt="Banner" />
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container">
+      <a href="/trangdudoan.html" class="btn-guide">Dùng thử</a>
+      <a href="/trangdudoan.html" class="btn-login">Đăng nhập</a>
+      <a href="/trangdudoan.html" class="btn-register">Đăng ký</a>
+      <a href="/thanhtoan copy.html" class="btn-buy-credit">Lộc cho admin</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+      <h1>Giới thiệu</h1>
+
+      <!-- Hình ảnh demo -->
+      <div class="demo-image">
+        <img src="/images/hacktool.png" alt="Hình ảnh demo" />
+      </div>
+      <p>
+        Chào mừng bạn đến với trang chủ của <strong>VN168</strong> - Nơi cung
+        cấp các công cụ hack lớn nhỏ tiên tiến nhất. Chúng tôi tự hào mang đến
+        cho bạn những giải pháp công nghệ hiện đại, giúp bạn đạt được tỷ lệ
+        thắng cao trong mọi cuộc chơi.
+      </p>
+
+      <h2>Công Nghệ Tiên Tiến</h2>
+      <p>
+        Tại VN168, chúng tôi sử dụng những công nghệ tiên tiến nhất để phát
+        triển các công cụ hack. Những công cụ này không chỉ mạnh mẽ mà còn dễ sử
+        dụng, đảm bảo rằng ngay cả những người mới bắt đầu cũng có thể tận dụng
+        tối đa các tính năng mà chúng tôi cung cấp.
+      </p>
+
+      <h2>Tỷ Lệ Thắng Cao</h2>
+      <p>
+        Với VN168, bạn sẽ không còn phải lo lắng về việc thua cuộc. Các công cụ
+        của chúng tôi được thiết kế để tối ưu hóa tỷ lệ thắng của bạn, giúp bạn
+        luôn ở vị trí dẫn đầu. Dù là trong các trò chơi lớn hay nhỏ, VN168 luôn
+        đảm bảo bạn có lợi thế vượt trội.
+      </p>
+
+      <h2>Bảo Mật và Tin Cậy</h2>
+      <p>
+        Chúng tôi hiểu rằng bảo mật là yếu tố quan trọng nhất khi sử dụng bất kỳ
+        công cụ hack nào. Vì vậy, VN168 cam kết cung cấp các công cụ an toàn và
+        bảo mật nhất, giúp bạn yên tâm khi sử dụng mà không lo bị phát hiện hay
+        gặp rủi ro.
+      </p>
+
+      <h2>Hỗ Trợ Khách Hàng</h2>
+      <p>
+        Đội ngũ hỗ trợ khách hàng của VN168 luôn sẵn sàng giúp đỡ bạn 24/7. Nếu
+        bạn có bất kỳ câu hỏi hay gặp vấn đề nào, hãy liên hệ với chúng tôi để
+        được hỗ trợ kịp thời và chuyên nghiệp.
+      </p>
+
+      <!-- Đã nhận lộc của: -->
+      <div class="donors-list">
+        <h2>Đã nhận lộc của:</h2>
+        <ul>
+          <li>Huỳnh Ngọc Trường - 500,000 VND</li>
+          <li>Phạm Quang Huy - 300,000 VND</li>
+          <li>Đỗ Thị Lan - 450,000 VND</li>
+          <li>Ngô Thanh Tùng - 900,000 VND</li>
+          <li>Vũ Thị Mai - 600,000 VND</li>
+          <li>Đinh Công Minh - 800,000 VND</li>
+          <li>Nguyễn Thị Hồng - 1,500,000 VND</li>
+          <li>Phạm Văn Bảo - 250,000 VND</li>
+          <li>Trần Thị Thanh - 700,000 VND</li>
+          <li>Lê Minh Tuấn - 1,100,000 VND</li>
+          <li>Đỗ Văn Phúc - 500,000 VND</li>
+          <li>Nguyễn Tuấn Anh - 950,000 VND</li>
+          <li>Phạm Thị Yến - 400,000 VND</li>
+          <li>Trần Văn Dũng - 650,000 VND</li>
+          <li>Lê Thị Lan Anh - 1,300,000 VND</li>
+          <li>Nguyễn Văn Toàn - 550,000 VND</li>
+          <li>Phạm Thị Hòa - 800,000 VND</li>
+          <li>Đỗ Minh Quân - 1,000,000 VND</li>
+          <li>Ngô Văn Hùng - 350,000 VND</li>
+          <li>Trần Thị Hương - 900,000 VND</li>
+          <li>Vũ Văn Tài - 600,000 VND</li>
+          <li>Đinh Thị Mai - 750,000 VND</li>
+          <li>Nguyễn Quang Bình - 1,200,000 VND</li>
+          <li>Phạm Thị Thu - 450,000 VND</li>
+          <li>Trần Văn Phong - 700,000 VND</li>
+          <li>Lê Thị Ngọc - 1,100,000 VND</li>
+          <li>Đỗ Thị Thanh - 500,000 VND</li>
+          <li>Nguyễn Văn Tùng - 950,000 VND</li>
+          <li>Phạm Minh Hiếu - 400,000 VND</li>
+          <li>Trần Thị Hà - 650,000 VND</li>
+          <li>Lê Văn Khánh - 1,300,000 VND</li>
+          <li>Nguyễn Thị Thu - 550,000 VND</li>
+          <li>Phạm Văn Hùng - 800,000 VND</li>
+          <li>Đỗ Thị Phương - 1,000,000 VND</li>
+          <li>Ngô Minh Đức - 350,000 VND</li>
+          <li>Trần Thị Kim - 900,000 VND</li>
+          <li>Vũ Văn Huy - 600,000 VND</li>
+          <li>Đinh Thị Hằng - 750,000 VND</li>
+          <li>Nguyễn Văn Long - 1,200,000 VND</li>
+          <li>Phạm Thị Minh - 450,000 VND</li>
+          <li>Trần Văn Nam - 700,000 VND</li>
+          <li>Lê Thị Hương - 1,100,000 VND</li>
+          <li>Đỗ Văn Tuấn - 500,000 VND</li>
+          <li>Nguyễn Thị Lan - 950,000 VND</li>
+        </ul>
+      </div>
+
+      <!-- Danh sách đánh giá -->
+      <div class="review-list" id="reviewList">
+        <h2>Đánh Giá Của Khách Hàng</h2>
+        <div class="review-item">
+          <p>
+            <strong>Hải Đăng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Dịch vụ tuyệt vời, sẽ tiếp tục sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Minh Anh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool rất hữu ích và dễ sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Ngọc Trâm</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với chất lượng dịch vụ.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Quốc Huy</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện thân thiện và trực quan.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thùy Dương</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đội ngũ hỗ trợ nhiệt tình và chuyên nghiệp.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hoàng Long</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đáp ứng tốt mọi nhu cầu công việc của tôi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thanh Tùng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giá cả hợp lý và chất lượng tuyệt vời.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Mai Linh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Văn Tiến</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất khuyến khích mọi người sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Phương Thảo</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Chất lượng dịch vụ vượt xa mong đợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Khánh Hòa</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với trải nghiệm sử dụng tool này.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Trọng Nhân</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện dễ sử dụng và rất tiện lợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hồng Nhung</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool hoạt động rất mượt mà và hiệu quả.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Đình Quân</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đội ngũ hỗ trợ rất nhanh chóng và tận tâm.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thu Hằng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tôi rất ấn tượng với chất lượng dịch vụ.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Vũ Lâm</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Kim Oanh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thanh Sơn</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Ngọc Hân</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Chất lượng dịch vụ hoàn hảo.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Quang Minh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool rất dễ sử dụng và hiệu quả.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Xuân Trường</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với trải nghiệm sử dụng tool này.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hà My</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi hoàn thành công việc nhanh chóng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Trung Kiên</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giá cả hợp lý và chất lượng tuyệt vời.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Lan Phương</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này thực sự rất hữu ích.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Đức Anh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Dịch vụ tuyệt vời, sẽ tiếp tục sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thùy Linh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với chất lượng dịch vụ.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hoàng Nam</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Minh Thư</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hữu Phước</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Ngọc Quý</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Chất lượng dịch vụ vượt xa mong đợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Quỳnh Trang</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện thân thiện và trực quan.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Văn Hưng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đội ngũ hỗ trợ nhiệt tình và chuyên nghiệp.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thanh Hà</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện dễ sử dụng và rất tiện lợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hồng Phúc</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool hoạt động rất mượt mà và hiệu quả.</p>
+        </div>
+        <div class="review-item">
+          <p>
+            <strong>Hải Đăng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Dịch vụ tuyệt vời, sẽ tiếp tục sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Minh Anh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool rất hữu ích và dễ sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Ngọc Trâm</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với chất lượng dịch vụ.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Quốc Huy</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện thân thiện và trực quan.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thùy Dương</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đội ngũ hỗ trợ nhiệt tình và chuyên nghiệp.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hoàng Long</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đáp ứng tốt mọi nhu cầu công việc của tôi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thanh Tùng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giá cả hợp lý và chất lượng tuyệt vời.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Mai Linh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Văn Tiến</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất khuyến khích mọi người sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Phương Thảo</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Chất lượng dịch vụ vượt xa mong đợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Khánh Hòa</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với trải nghiệm sử dụng tool này.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Trọng Nhân</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện dễ sử dụng và rất tiện lợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hồng Nhung</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool hoạt động rất mượt mà và hiệu quả.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Đình Quân</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đội ngũ hỗ trợ rất nhanh chóng và tận tâm.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thu Hằng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tôi rất ấn tượng với chất lượng dịch vụ.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Vũ Lâm</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Kim Oanh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thanh Sơn</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Ngọc Hân</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Chất lượng dịch vụ hoàn hảo.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Quang Minh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool rất dễ sử dụng và hiệu quả.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Xuân Trường</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với trải nghiệm sử dụng tool này.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hà My</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi hoàn thành công việc nhanh chóng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Trung Kiên</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giá cả hợp lý và chất lượng tuyệt vời.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Lan Phương</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này thực sự rất hữu ích.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Đức Anh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Dịch vụ tuyệt vời, sẽ tiếp tục sử dụng.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thùy Linh</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất hài lòng với chất lượng dịch vụ.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hoàng Nam</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Minh Thư</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hữu Phước</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Ngọc Quý</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Chất lượng dịch vụ vượt xa mong đợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Quỳnh Trang</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện thân thiện và trực quan.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Văn Hưng</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Đội ngũ hỗ trợ nhiệt tình và chuyên nghiệp.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Thanh Hà</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Giao diện dễ sử dụng và rất tiện lợi.</p>
+        </div>
+
+        <div class="review-item">
+          <p>
+            <strong>Hồng Phúc</strong> -
+            <span class="star-rating">★★★★★</span>
+          </p>
+          <p>Tool hoạt động rất mượt mà và hiệu quả.</p>
+          <div class="review-item">
+            <p>
+              <strong>Đức Huy</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Đội ngũ hỗ trợ rất nhanh chóng và tận tâm.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thu Hằng</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tôi rất ấn tượng với chất lượng dịch vụ.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Vũ Lâm</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Kim Oanh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thanh Sơn</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Ngọc Hân</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Chất lượng dịch vụ hoàn hảo.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Quang Minh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool rất dễ sử dụng và hiệu quả.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Xuân Trường</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất hài lòng với trải nghiệm sử dụng tool này.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Hà My</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này giúp tôi hoàn thành công việc nhanh chóng.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Trung Kiên</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Giá cả hợp lý và chất lượng tuyệt vời.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Lan Phương</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này thực sự rất hữu ích.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Đức Anh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Dịch vụ tuyệt vời, sẽ tiếp tục sử dụng.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thùy Linh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất hài lòng với chất lượng dịch vụ.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Hoàng Nam</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Minh Thư</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Hữu Phước</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Ngọc Quý</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Chất lượng dịch vụ vượt xa mong đợi.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Quỳnh Trang</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Giao diện thân thiện và trực quan.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Văn Hưng</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Đội ngũ hỗ trợ nhiệt tình và chuyên nghiệp.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thanh Hà</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Giao diện dễ sử dụng và rất tiện lợi.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Hồng Phúc</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool hoạt động rất mượt mà và hiệu quả.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Đức Huy</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Đội ngũ hỗ trợ rất nhanh chóng và tận tâm.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thu Hằng</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tôi rất ấn tượng với chất lượng dịch vụ.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Vũ Lâm</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này thực sự rất hữu ích cho công việc của tôi.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Kim Oanh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất dễ sử dụng và mang lại hiệu quả cao.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thanh Sơn</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này giúp tôi tiết kiệm rất nhiều thời gian.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Ngọc Hân</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Chất lượng dịch vụ hoàn hảo.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Quang Minh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool rất dễ sử dụng và hiệu quả.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Xuân Trường</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất hài lòng với trải nghiệm sử dụng tool này.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Hà My</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này giúp tôi hoàn thành công việc nhanh chóng.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Trung Kiên</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Giá cả hợp lý và chất lượng tuyệt vời.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Lan Phương</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Tool này thực sự rất hữu ích.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Đức Anh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Dịch vụ tuyệt vời, sẽ tiếp tục sử dụng.</p>
+          </div>
+
+          <div class="review-item">
+            <p>
+              <strong>Thùy Linh</strong> -
+              <span class="star-rating">★★★★★</span>
+            </p>
+            <p>Rất hài lòng với chất lượng dịch vụ.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form đánh giá -->
+      <div class="review-section">
+        <h2>Gửi Đánh Giá</h2>
+        <form class="review-form" onsubmit="handleReviewSubmit(event)">
+          <div class="form-group">
+            <label for="name">Tên của bạn</label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="rating">Đánh giá</label>
+            <select class="form-control" id="rating" required>
+              <option value="5">★★★★★</option>
+              <option value="4">★★★★☆</option>
+              <option value="3">★★★☆☆</option>
+              <option value="2">★★☆☆☆</option>
+              <option value="1">★☆☆☆☆</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="comment">Bình luận</label>
+            <textarea
+              class="form-control"
+              id="comment"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Gửi Đánh Giá</button>
+        </form>
+        <div
+          id="successMessage"
+          style="display: none; margin-top: 20px"
+          class="alert alert-success"
+        >
+          Gửi đánh giá thành công!
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleReviewSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const rating = document.getElementById("rating").value;
+        const comment = document.getElementById("comment").value;
+
+        const reviewList = document.getElementById("reviewList");
+        const newReview = document.createElement("div");
+        newReview.classList.add("review-item");
+        newReview.innerHTML = `
+          <p><strong>${name}</strong> - <span class="star-rating">${"★".repeat(
+          rating
+        )}${"☆".repeat(5 - rating)}</span></p>
+          <p>${comment}</p>
+        `;
+        reviewList.appendChild(newReview);
+
+        document.getElementById("successMessage").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("successMessage").style.display = "none";
+        }, 3000);
+
+        document.querySelector(".review-form").reset();
+      }
+    </script>
+  </body>
+</html>
